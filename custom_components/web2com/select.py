@@ -72,7 +72,6 @@ async def async_setup_entry(hass: HomeAssistant, entry: ConfigEntry, async_add_e
 
 class HeaterModeSelect(CoordinatorEntity, SelectEntity):
     _attr_has_entity_name = True
-    _attr_name = None
     _attr_translation_key = "heater_operating_mode"
     _attr_icon = "mdi:radiator"
     _attr_options = list(MODE_VALUES)

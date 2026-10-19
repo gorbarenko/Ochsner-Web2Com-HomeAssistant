@@ -8,7 +8,7 @@ Custom Home Assistant integration for locally connected Ochsner Web2Com gateways
 - Configuration through **Settings → Devices & services → Add integration → Ochsner Web2Com**.
 - Thirteen predefined temperature, heating-circuit and energy sensors.
 - Device entry with grouped entities in Home Assistant.
-- Heater mode switch: **Manual** (`4`) / **Automatic** (`1`). **Warning:** changes can energize electric heaters.
+- Heater mode selector: **Automatic** (`1`), **Manual** (`4`), or **Off** (`0`). **Warning:** changes can energize electric heaters.
 - Independent polling intervals for each sensor (15–300 seconds).
 
 ## Install with HACS
@@ -35,3 +35,7 @@ English, German, Ukrainian, French, Italian, Dutch, Polish, Czech, Slovak and Sl
 Choose Automatic (1), Manual (4), or Off (0) from the device selector. Value 0 is known as a readback value but its write behavior has not been verified on all gateways: test it with the physical heating controller supervised.
 
 Entity names and selector options are localized in ten languages. After upgrading from the switch version, remove the obsolete switch entity if it remains in the entity registry. The new select is a separate entity.
+
+## Version 1.7.1
+
+Fixed localized entity names: sensor and selector entities now resolve their names from the translation keys. No SOAP commands, OIDs, polling intervals, or unique IDs changed. Existing manually customized entity names are not overwritten by Home Assistant.

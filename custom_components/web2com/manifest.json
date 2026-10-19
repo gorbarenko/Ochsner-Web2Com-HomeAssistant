@@ -1,7 +1,7 @@
 {
   "domain": "web2com",
   "name": "Ochsner Web2Com",
-  "version": "1.7.0",
+  "version": "1.7.1",
   "codeowners": [],
   "dependencies": [],
   "integration_type": "hub",

@@ -53,7 +53,6 @@ class Web2ComSensor(CoordinatorEntity, SensorEntity):
         super().__init__(coordinator)
         self._definition = definition
         self._attr_has_entity_name = True
-        self._attr_name = None
         self._attr_unique_id = f"web2com_{config['host']}_{definition['key']}"
         self._attr_translation_key = definition['key']
         self._attr_native_unit_of_measurement = definition.get('unit_of_measurement') or None
