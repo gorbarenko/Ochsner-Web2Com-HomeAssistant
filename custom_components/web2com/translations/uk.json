@@ -76,9 +76,14 @@
         "name": "Цільова температура радіаторів"
       }
     },
-    "switch": {
-      "manual_heater_mode": {
-        "name": "Ручний режим ТЕНів"
+    "select": {
+      "heater_operating_mode": {
+        "name": "Режим роботи ТЕНів",
+        "state": {
+          "automatic": "Автоматичний",
+          "manual": "Ручний",
+          "off": "Вимкнено"
+        }
       }
     }
   }

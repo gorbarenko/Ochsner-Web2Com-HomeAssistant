@@ -76,9 +76,14 @@
         "name": "Požadovaná teplota radiátorů"
       }
     },
-    "switch": {
-      "manual_heater_mode": {
-        "name": "Ruční režim topných těles"
+    "select": {
+      "heater_operating_mode": {
+        "name": "Režim vytápění",
+        "state": {
+          "automatic": "Automatický",
+          "manual": "Ruční",
+          "off": "Vypnuto"
+        }
       }
     }
   }

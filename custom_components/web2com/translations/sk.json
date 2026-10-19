@@ -76,9 +76,14 @@
         "name": "Cieľová teplota radiátorov"
       }
     },
-    "switch": {
-      "manual_heater_mode": {
-        "name": "Ručný režim vykurovacích telies"
+    "select": {
+      "heater_operating_mode": {
+        "name": "Režim vykurovania",
+        "state": {
+          "automatic": "Automatický",
+          "manual": "Ručný",
+          "off": "Vypnuté"
+        }
       }
     }
   }

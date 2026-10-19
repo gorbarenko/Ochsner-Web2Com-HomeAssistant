@@ -76,9 +76,14 @@
         "name": "Ciljna temperatura radiatorjev"
       }
     },
-    "switch": {
-      "manual_heater_mode": {
-        "name": "Ročni način grelcev"
+    "select": {
+      "heater_operating_mode": {
+        "name": "Način ogrevanja",
+        "state": {
+          "automatic": "Samodejno",
+          "manual": "Ročno",
+          "off": "Izklopljeno"
+        }
       }
     }
   }

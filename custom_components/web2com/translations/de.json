@@ -76,9 +76,14 @@
         "name": "Solltemperatur Heizkörper"
       }
     },
-    "switch": {
-      "manual_heater_mode": {
-        "name": "Manueller Heizstabmodus"
+    "select": {
+      "heater_operating_mode": {
+        "name": "Heizbetrieb",
+        "state": {
+          "automatic": "Automatisch",
+          "manual": "Manuell",
+          "off": "Aus"
+        }
       }
     }
   }

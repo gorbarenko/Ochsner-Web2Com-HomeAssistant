@@ -29,3 +29,9 @@ Custom Home Assistant integration for locally connected Ochsner Web2Com gateways
 ## Languages
 
 English, German, Ukrainian, French, Italian, Dutch, Polish, Czech, Slovak and Slovenian. Russian is not included. Device entity identifiers are generated for each gateway and do not contain user-specific labels.
+
+## Heater mode control
+
+Choose Automatic (1), Manual (4), or Off (0) from the device selector. Value 0 is known as a readback value but its write behavior has not been verified on all gateways: test it with the physical heating controller supervised.
+
+Entity names and selector options are localized in ten languages. After upgrading from the switch version, remove the obsolete switch entity if it remains in the entity registry. The new select is a separate entity.

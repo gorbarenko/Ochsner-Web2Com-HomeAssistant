@@ -76,9 +76,14 @@
         "name": "Radiator target"
       }
     },
-    "switch": {
-      "manual_heater_mode": {
-        "name": "Manual heater mode"
+    "select": {
+      "heater_operating_mode": {
+        "name": "Heater operating mode",
+        "state": {
+          "automatic": "Automatic",
+          "manual": "Manual",
+          "off": "Off"
+        }
       }
     }
   }

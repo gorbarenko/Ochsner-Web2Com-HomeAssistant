@@ -76,9 +76,14 @@
         "name": "Consigne des radiateurs"
       }
     },
-    "switch": {
-      "manual_heater_mode": {
-        "name": "Mode manuel des résistances"
+    "select": {
+      "heater_operating_mode": {
+        "name": "Mode de chauffage",
+        "state": {
+          "automatic": "Automatique",
+          "manual": "Manuel",
+          "off": "Arrêt"
+        }
       }
     }
   }

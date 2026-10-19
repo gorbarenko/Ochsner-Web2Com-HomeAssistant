@@ -76,9 +76,14 @@
         "name": "Doeltemperatuur radiatoren"
       }
     },
-    "switch": {
-      "manual_heater_mode": {
-        "name": "Handmatige verwarmingsmodus"
+    "select": {
+      "heater_operating_mode": {
+        "name": "Verwarmingsmodus",
+        "state": {
+          "automatic": "Automatisch",
+          "manual": "Handmatig",
+          "off": "Uit"
+        }
       }
     }
   }

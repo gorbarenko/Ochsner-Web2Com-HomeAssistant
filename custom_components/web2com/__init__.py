@@ -7,7 +7,7 @@ from homeassistant.core import HomeAssistant
 
 from .const import DOMAIN
 
-PLATFORMS = [Platform.SENSOR, Platform.SWITCH]
+PLATFORMS = [Platform.SENSOR, Platform.SELECT]
 
 async def async_setup(hass: HomeAssistant, config: dict) -> bool:
     """Set up integration services."""

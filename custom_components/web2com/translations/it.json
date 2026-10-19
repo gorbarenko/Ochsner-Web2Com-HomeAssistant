@@ -76,9 +76,14 @@
         "name": "Temperatura obiettivo radiatori"
       }
     },
-    "switch": {
-      "manual_heater_mode": {
-        "name": "Modalità manuale resistenze"
+    "select": {
+      "heater_operating_mode": {
+        "name": "Modalità riscaldamento",
+        "state": {
+          "automatic": "Automatico",
+          "manual": "Manuale",
+          "off": "Spento"
+        }
       }
     }
   }

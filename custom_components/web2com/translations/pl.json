@@ -76,9 +76,14 @@
         "name": "Temperatura zadana grzejników"
       }
     },
-    "switch": {
-      "manual_heater_mode": {
-        "name": "Ręczny tryb grzałek"
+    "select": {
+      "heater_operating_mode": {
+        "name": "Tryb ogrzewania",
+        "state": {
+          "automatic": "Automatyczny",
+          "manual": "Ręczny",
+          "off": "Wyłączony"
+        }
       }
     }
   }
