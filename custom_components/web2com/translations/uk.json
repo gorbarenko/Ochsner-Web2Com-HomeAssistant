@@ -1,0 +1,85 @@
+{
+  "config": {
+    "step": {
+      "user": {
+        "title": "Підключення шлюзу",
+        "data": {
+          "host": "IP-адреса або ім’я хоста",
+          "username": "Користувач",
+          "password": "Пароль",
+          "authentication": "Автентифікація"
+        }
+      }
+    },
+    "error": {
+      "cannot_connect": "Не вдалося підключитися до шлюзу. Перевірте адресу та облікові дані."
+    },
+    "abort": {
+      "already_configured": "Шлюз уже налаштовано"
+    }
+  },
+  "options": {
+    "step": {
+      "init": {
+        "title": "Підключення шлюзу",
+        "data": {
+          "host": "IP-адреса або ім’я хоста",
+          "username": "Користувач",
+          "password": "Пароль",
+          "authentication": "Автентифікація"
+        }
+      }
+    },
+    "error": {
+      "cannot_connect": "Не вдалося підключитися до шлюзу. Перевірте адресу та облікові дані."
+    }
+  },
+  "entity": {
+    "sensor": {
+      "outdoor_temperature": {
+        "name": "Вулична температура"
+      },
+      "average_outdoor_temperature": {
+        "name": "Усереднена вулична температура"
+      },
+      "heater_mode_raw": {
+        "name": "Режим ТЕНів"
+      },
+      "buffer_temperature": {
+        "name": "Температура буферного бака"
+      },
+      "heater_starts": {
+        "name": "Кількість запусків ТЕНів"
+      },
+      "heater_hours": {
+        "name": "Години роботи ТЕНів"
+      },
+      "heater_energy_kwh": {
+        "name": "Енергія ТЕНів (кВт·год)"
+      },
+      "heater_energy_mwh": {
+        "name": "Енергія ТЕНів (МВт·год)"
+      },
+      "underfloor_flow": {
+        "name": "Подача теплої підлоги"
+      },
+      "underfloor_setpoint": {
+        "name": "Цільова температура теплої підлоги"
+      },
+      "mixing_valve": {
+        "name": "Положення змішувача"
+      },
+      "radiator_flow": {
+        "name": "Подача радіаторів"
+      },
+      "radiator_setpoint": {
+        "name": "Цільова температура радіаторів"
+      }
+    },
+    "switch": {
+      "manual_heater_mode": {
+        "name": "Ручний режим ТЕНів"
+      }
+    }
+  }
+}

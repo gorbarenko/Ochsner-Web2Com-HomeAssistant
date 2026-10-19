@@ -1,0 +1,85 @@
+{
+  "config": {
+    "step": {
+      "user": {
+        "title": "Připojení brány",
+        "data": {
+          "host": "IP adresa nebo název hostitele",
+          "username": "Uživatelské jméno",
+          "password": "Heslo",
+          "authentication": "Ověření"
+        }
+      }
+    },
+    "error": {
+      "cannot_connect": "Nelze se připojit k bráně. Zkontrolujte adresu a přihlašovací údaje."
+    },
+    "abort": {
+      "already_configured": "Brána je již nakonfigurována"
+    }
+  },
+  "options": {
+    "step": {
+      "init": {
+        "title": "Připojení brány",
+        "data": {
+          "host": "IP adresa nebo název hostitele",
+          "username": "Uživatelské jméno",
+          "password": "Heslo",
+          "authentication": "Ověření"
+        }
+      }
+    },
+    "error": {
+      "cannot_connect": "Nelze se připojit k bráně. Zkontrolujte adresu a přihlašovací údaje."
+    }
+  },
+  "entity": {
+    "sensor": {
+      "outdoor_temperature": {
+        "name": "Venkovní teplota"
+      },
+      "average_outdoor_temperature": {
+        "name": "Průměrná venkovní teplota"
+      },
+      "heater_mode_raw": {
+        "name": "Režim topných těles"
+      },
+      "buffer_temperature": {
+        "name": "Teplota akumulační nádrže"
+      },
+      "heater_starts": {
+        "name": "Počet spuštění topných těles"
+      },
+      "heater_hours": {
+        "name": "Provozní hodiny topných těles"
+      },
+      "heater_energy_kwh": {
+        "name": "Energie topných těles (kWh)"
+      },
+      "heater_energy_mwh": {
+        "name": "Energie topných těles (MWh)"
+      },
+      "underfloor_flow": {
+        "name": "Přívod podlahového vytápění"
+      },
+      "underfloor_setpoint": {
+        "name": "Požadovaná teplota podlahového vytápění"
+      },
+      "mixing_valve": {
+        "name": "Poloha směšovacího ventilu"
+      },
+      "radiator_flow": {
+        "name": "Přívod radiátorů"
+      },
+      "radiator_setpoint": {
+        "name": "Požadovaná teplota radiátorů"
+      }
+    },
+    "switch": {
+      "manual_heater_mode": {
+        "name": "Ruční režim topných těles"
+      }
+    }
+  }
+}

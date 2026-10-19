@@ -1,0 +1,85 @@
+{
+  "config": {
+    "step": {
+      "user": {
+        "title": "Povezava s prehodom",
+        "data": {
+          "host": "Naslov IP ali ime gostitelja",
+          "username": "Uporabniško ime",
+          "password": "Geslo",
+          "authentication": "Preverjanje pristnosti"
+        }
+      }
+    },
+    "error": {
+      "cannot_connect": "Povezava s prehodom ni uspela. Preverite naslov in prijavne podatke."
+    },
+    "abort": {
+      "already_configured": "Prehod je že nastavljen"
+    }
+  },
+  "options": {
+    "step": {
+      "init": {
+        "title": "Povezava s prehodom",
+        "data": {
+          "host": "Naslov IP ali ime gostitelja",
+          "username": "Uporabniško ime",
+          "password": "Geslo",
+          "authentication": "Preverjanje pristnosti"
+        }
+      }
+    },
+    "error": {
+      "cannot_connect": "Povezava s prehodom ni uspela. Preverite naslov in prijavne podatke."
+    }
+  },
+  "entity": {
+    "sensor": {
+      "outdoor_temperature": {
+        "name": "Zunanja temperatura"
+      },
+      "average_outdoor_temperature": {
+        "name": "Povprečna zunanja temperatura"
+      },
+      "heater_mode_raw": {
+        "name": "Način električnih grelcev"
+      },
+      "buffer_temperature": {
+        "name": "Temperatura zalogovnika"
+      },
+      "heater_starts": {
+        "name": "Število zagonov grelcev"
+      },
+      "heater_hours": {
+        "name": "Obratovalne ure grelcev"
+      },
+      "heater_energy_kwh": {
+        "name": "Energija grelcev (kWh)"
+      },
+      "heater_energy_mwh": {
+        "name": "Energija grelcev (MWh)"
+      },
+      "underfloor_flow": {
+        "name": "Dovod talnega ogrevanja"
+      },
+      "underfloor_setpoint": {
+        "name": "Ciljna temperatura talnega ogrevanja"
+      },
+      "mixing_valve": {
+        "name": "Položaj mešalnega ventila"
+      },
+      "radiator_flow": {
+        "name": "Dovod radiatorjev"
+      },
+      "radiator_setpoint": {
+        "name": "Ciljna temperatura radiatorjev"
+      }
+    },
+    "switch": {
+      "manual_heater_mode": {
+        "name": "Ročni način grelcev"
+      }
+    }
+  }
+}

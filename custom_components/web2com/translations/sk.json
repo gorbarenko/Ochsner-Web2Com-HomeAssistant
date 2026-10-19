@@ -1,0 +1,85 @@
+{
+  "config": {
+    "step": {
+      "user": {
+        "title": "Pripojenie brány",
+        "data": {
+          "host": "IP adresa alebo názov hostiteľa",
+          "username": "Používateľské meno",
+          "password": "Heslo",
+          "authentication": "Overenie"
+        }
+      }
+    },
+    "error": {
+      "cannot_connect": "Nedá sa pripojiť k bráne. Skontrolujte adresu a prihlasovacie údaje."
+    },
+    "abort": {
+      "already_configured": "Brána je už nakonfigurovaná"
+    }
+  },
+  "options": {
+    "step": {
+      "init": {
+        "title": "Pripojenie brány",
+        "data": {
+          "host": "IP adresa alebo názov hostiteľa",
+          "username": "Používateľské meno",
+          "password": "Heslo",
+          "authentication": "Overenie"
+        }
+      }
+    },
+    "error": {
+      "cannot_connect": "Nedá sa pripojiť k bráne. Skontrolujte adresu a prihlasovacie údaje."
+    }
+  },
+  "entity": {
+    "sensor": {
+      "outdoor_temperature": {
+        "name": "Vonkajšia teplota"
+      },
+      "average_outdoor_temperature": {
+        "name": "Priemerná vonkajšia teplota"
+      },
+      "heater_mode_raw": {
+        "name": "Režim vykurovacích telies"
+      },
+      "buffer_temperature": {
+        "name": "Teplota akumulačnej nádrže"
+      },
+      "heater_starts": {
+        "name": "Počet spustení vykurovacích telies"
+      },
+      "heater_hours": {
+        "name": "Prevádzkové hodiny telies"
+      },
+      "heater_energy_kwh": {
+        "name": "Energia telies (kWh)"
+      },
+      "heater_energy_mwh": {
+        "name": "Energia telies (MWh)"
+      },
+      "underfloor_flow": {
+        "name": "Prívod podlahového kúrenia"
+      },
+      "underfloor_setpoint": {
+        "name": "Cieľová teplota podlahového kúrenia"
+      },
+      "mixing_valve": {
+        "name": "Poloha zmiešavacieho ventilu"
+      },
+      "radiator_flow": {
+        "name": "Prívod radiátorov"
+      },
+      "radiator_setpoint": {
+        "name": "Cieľová teplota radiátorov"
+      }
+    },
+    "switch": {
+      "manual_heater_mode": {
+        "name": "Ručný režim vykurovacích telies"
+      }
+    }
+  }
+}

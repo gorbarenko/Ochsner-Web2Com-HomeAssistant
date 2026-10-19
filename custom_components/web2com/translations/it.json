@@ -1,0 +1,85 @@
+{
+  "config": {
+    "step": {
+      "user": {
+        "title": "Connessione gateway",
+        "data": {
+          "host": "Indirizzo IP o nome host",
+          "username": "Nome utente",
+          "password": "Password",
+          "authentication": "Autenticazione"
+        }
+      }
+    },
+    "error": {
+      "cannot_connect": "Impossibile connettersi al gateway. Verificare indirizzo e credenziali."
+    },
+    "abort": {
+      "already_configured": "Gateway già configurato"
+    }
+  },
+  "options": {
+    "step": {
+      "init": {
+        "title": "Connessione gateway",
+        "data": {
+          "host": "Indirizzo IP o nome host",
+          "username": "Nome utente",
+          "password": "Password",
+          "authentication": "Autenticazione"
+        }
+      }
+    },
+    "error": {
+      "cannot_connect": "Impossibile connettersi al gateway. Verificare indirizzo e credenziali."
+    }
+  },
+  "entity": {
+    "sensor": {
+      "outdoor_temperature": {
+        "name": "Temperatura esterna"
+      },
+      "average_outdoor_temperature": {
+        "name": "Temperatura esterna media"
+      },
+      "heater_mode_raw": {
+        "name": "Modalità resistenze elettriche"
+      },
+      "buffer_temperature": {
+        "name": "Temperatura accumulo inerziale"
+      },
+      "heater_starts": {
+        "name": "Avvii delle resistenze"
+      },
+      "heater_hours": {
+        "name": "Ore di funzionamento resistenze"
+      },
+      "heater_energy_kwh": {
+        "name": "Energia resistenze (kWh)"
+      },
+      "heater_energy_mwh": {
+        "name": "Energia resistenze (MWh)"
+      },
+      "underfloor_flow": {
+        "name": "Mandata riscaldamento a pavimento"
+      },
+      "underfloor_setpoint": {
+        "name": "Temperatura obiettivo pavimento"
+      },
+      "mixing_valve": {
+        "name": "Posizione valvola miscelatrice"
+      },
+      "radiator_flow": {
+        "name": "Mandata radiatori"
+      },
+      "radiator_setpoint": {
+        "name": "Temperatura obiettivo radiatori"
+      }
+    },
+    "switch": {
+      "manual_heater_mode": {
+        "name": "Modalità manuale resistenze"
+      }
+    }
+  }
+}

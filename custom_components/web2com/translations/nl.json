@@ -1,0 +1,85 @@
+{
+  "config": {
+    "step": {
+      "user": {
+        "title": "Gatewayverbinding",
+        "data": {
+          "host": "IP-adres of hostnaam",
+          "username": "Gebruikersnaam",
+          "password": "Wachtwoord",
+          "authentication": "Authenticatie"
+        }
+      }
+    },
+    "error": {
+      "cannot_connect": "Kan geen verbinding maken. Controleer adres en inloggegevens."
+    },
+    "abort": {
+      "already_configured": "Gateway is al geconfigureerd"
+    }
+  },
+  "options": {
+    "step": {
+      "init": {
+        "title": "Gatewayverbinding",
+        "data": {
+          "host": "IP-adres of hostnaam",
+          "username": "Gebruikersnaam",
+          "password": "Wachtwoord",
+          "authentication": "Authenticatie"
+        }
+      }
+    },
+    "error": {
+      "cannot_connect": "Kan geen verbinding maken. Controleer adres en inloggegevens."
+    }
+  },
+  "entity": {
+    "sensor": {
+      "outdoor_temperature": {
+        "name": "Buitentemperatuur"
+      },
+      "average_outdoor_temperature": {
+        "name": "Gemiddelde buitentemperatuur"
+      },
+      "heater_mode_raw": {
+        "name": "Modus elektrisch verwarmingselement"
+      },
+      "buffer_temperature": {
+        "name": "Buffervattemperatuur"
+      },
+      "heater_starts": {
+        "name": "Starts verwarmingselement"
+      },
+      "heater_hours": {
+        "name": "Bedrijfsuren verwarmingselement"
+      },
+      "heater_energy_kwh": {
+        "name": "Energie verwarmingselement (kWh)"
+      },
+      "heater_energy_mwh": {
+        "name": "Energie verwarmingselement (MWh)"
+      },
+      "underfloor_flow": {
+        "name": "Aanvoer vloerverwarming"
+      },
+      "underfloor_setpoint": {
+        "name": "Doeltemperatuur vloerverwarming"
+      },
+      "mixing_valve": {
+        "name": "Stand mengklep"
+      },
+      "radiator_flow": {
+        "name": "Aanvoer radiatoren"
+      },
+      "radiator_setpoint": {
+        "name": "Doeltemperatuur radiatoren"
+      }
+    },
+    "switch": {
+      "manual_heater_mode": {
+        "name": "Handmatige verwarmingsmodus"
+      }
+    }
+  }
+}

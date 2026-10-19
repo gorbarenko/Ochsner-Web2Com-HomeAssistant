@@ -1,0 +1,85 @@
+{
+  "config": {
+    "step": {
+      "user": {
+        "title": "Połączenie z bramką",
+        "data": {
+          "host": "Adres IP lub nazwa hosta",
+          "username": "Nazwa użytkownika",
+          "password": "Hasło",
+          "authentication": "Uwierzytelnianie"
+        }
+      }
+    },
+    "error": {
+      "cannot_connect": "Nie można połączyć się z bramką. Sprawdź adres i dane logowania."
+    },
+    "abort": {
+      "already_configured": "Bramka jest już skonfigurowana"
+    }
+  },
+  "options": {
+    "step": {
+      "init": {
+        "title": "Połączenie z bramką",
+        "data": {
+          "host": "Adres IP lub nazwa hosta",
+          "username": "Nazwa użytkownika",
+          "password": "Hasło",
+          "authentication": "Uwierzytelnianie"
+        }
+      }
+    },
+    "error": {
+      "cannot_connect": "Nie można połączyć się z bramką. Sprawdź adres i dane logowania."
+    }
+  },
+  "entity": {
+    "sensor": {
+      "outdoor_temperature": {
+        "name": "Temperatura zewnętrzna"
+      },
+      "average_outdoor_temperature": {
+        "name": "Średnia temperatura zewnętrzna"
+      },
+      "heater_mode_raw": {
+        "name": "Tryb grzałek"
+      },
+      "buffer_temperature": {
+        "name": "Temperatura zbiornika buforowego"
+      },
+      "heater_starts": {
+        "name": "Liczba uruchomień grzałek"
+      },
+      "heater_hours": {
+        "name": "Godziny pracy grzałek"
+      },
+      "heater_energy_kwh": {
+        "name": "Energia grzałek (kWh)"
+      },
+      "heater_energy_mwh": {
+        "name": "Energia grzałek (MWh)"
+      },
+      "underfloor_flow": {
+        "name": "Zasilanie ogrzewania podłogowego"
+      },
+      "underfloor_setpoint": {
+        "name": "Temperatura zadana podłogówki"
+      },
+      "mixing_valve": {
+        "name": "Położenie zaworu mieszającego"
+      },
+      "radiator_flow": {
+        "name": "Zasilanie grzejników"
+      },
+      "radiator_setpoint": {
+        "name": "Temperatura zadana grzejników"
+      }
+    },
+    "switch": {
+      "manual_heater_mode": {
+        "name": "Ręczny tryb grzałek"
+      }
+    }
+  }
+}

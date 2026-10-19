@@ -1,0 +1,85 @@
+{
+  "config": {
+    "step": {
+      "user": {
+        "title": "Gateway connection",
+        "data": {
+          "host": "IP address or hostname",
+          "username": "Username",
+          "password": "Password",
+          "authentication": "Authentication"
+        }
+      }
+    },
+    "error": {
+      "cannot_connect": "Cannot connect to the gateway. Check the address and credentials."
+    },
+    "abort": {
+      "already_configured": "Gateway already configured"
+    }
+  },
+  "options": {
+    "step": {
+      "init": {
+        "title": "Gateway connection",
+        "data": {
+          "host": "IP address or hostname",
+          "username": "Username",
+          "password": "Password",
+          "authentication": "Authentication"
+        }
+      }
+    },
+    "error": {
+      "cannot_connect": "Cannot connect to the gateway. Check the address and credentials."
+    }
+  },
+  "entity": {
+    "sensor": {
+      "outdoor_temperature": {
+        "name": "Outdoor temperature"
+      },
+      "average_outdoor_temperature": {
+        "name": "Average outdoor temperature"
+      },
+      "heater_mode_raw": {
+        "name": "Heater mode"
+      },
+      "buffer_temperature": {
+        "name": "Buffer tank temperature"
+      },
+      "heater_starts": {
+        "name": "Heater starts"
+      },
+      "heater_hours": {
+        "name": "Heater operating hours"
+      },
+      "heater_energy_kwh": {
+        "name": "Heater energy (kWh)"
+      },
+      "heater_energy_mwh": {
+        "name": "Heater energy (MWh)"
+      },
+      "underfloor_flow": {
+        "name": "Underfloor heating supply"
+      },
+      "underfloor_setpoint": {
+        "name": "Underfloor heating target"
+      },
+      "mixing_valve": {
+        "name": "Mixing valve position"
+      },
+      "radiator_flow": {
+        "name": "Radiator supply"
+      },
+      "radiator_setpoint": {
+        "name": "Radiator target"
+      }
+    },
+    "switch": {
+      "manual_heater_mode": {
+        "name": "Manual heater mode"
+      }
+    }
+  }
+}

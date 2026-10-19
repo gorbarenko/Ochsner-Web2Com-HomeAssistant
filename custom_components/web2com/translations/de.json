@@ -1,0 +1,85 @@
+{
+  "config": {
+    "step": {
+      "user": {
+        "title": "Gateway-Verbindung",
+        "data": {
+          "host": "IP-Adresse oder Hostname",
+          "username": "Benutzername",
+          "password": "Passwort",
+          "authentication": "Authentifizierung"
+        }
+      }
+    },
+    "error": {
+      "cannot_connect": "Verbindung zum Gateway fehlgeschlagen. Adresse und Zugangsdaten prüfen."
+    },
+    "abort": {
+      "already_configured": "Gateway bereits eingerichtet"
+    }
+  },
+  "options": {
+    "step": {
+      "init": {
+        "title": "Gateway-Verbindung",
+        "data": {
+          "host": "IP-Adresse oder Hostname",
+          "username": "Benutzername",
+          "password": "Passwort",
+          "authentication": "Authentifizierung"
+        }
+      }
+    },
+    "error": {
+      "cannot_connect": "Verbindung zum Gateway fehlgeschlagen. Adresse und Zugangsdaten prüfen."
+    }
+  },
+  "entity": {
+    "sensor": {
+      "outdoor_temperature": {
+        "name": "Außentemperatur"
+      },
+      "average_outdoor_temperature": {
+        "name": "Gemittelte Außentemperatur"
+      },
+      "heater_mode_raw": {
+        "name": "Heizstabmodus"
+      },
+      "buffer_temperature": {
+        "name": "Pufferspeichertemperatur"
+      },
+      "heater_starts": {
+        "name": "Heizstabstarts"
+      },
+      "heater_hours": {
+        "name": "Betriebsstunden der Heizstäbe"
+      },
+      "heater_energy_kwh": {
+        "name": "Heizstabenergie (kWh)"
+      },
+      "heater_energy_mwh": {
+        "name": "Heizstabenergie (MWh)"
+      },
+      "underfloor_flow": {
+        "name": "Vorlauftemperatur Fußbodenheizung"
+      },
+      "underfloor_setpoint": {
+        "name": "Solltemperatur Fußbodenheizung"
+      },
+      "mixing_valve": {
+        "name": "Mischerstellung"
+      },
+      "radiator_flow": {
+        "name": "Vorlauftemperatur Heizkörper"
+      },
+      "radiator_setpoint": {
+        "name": "Solltemperatur Heizkörper"
+      }
+    },
+    "switch": {
+      "manual_heater_mode": {
+        "name": "Manueller Heizstabmodus"
+      }
+    }
+  }
+}
