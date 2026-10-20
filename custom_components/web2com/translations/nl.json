@@ -43,7 +43,12 @@
         "name": "Gemiddelde buitentemperatuur"
       },
       "heater_mode_raw": {
-        "name": "Modus elektrisch verwarmingselement"
+        "name": "Modus elektrisch verwarmingselement",
+        "state": {
+          "automatic": "Automatisch",
+          "manual": "Handmatig",
+          "off": "Uit"
+        }
       },
       "buffer_temperature": {
         "name": "Buffervattemperatuur"

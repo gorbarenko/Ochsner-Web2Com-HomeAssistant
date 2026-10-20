@@ -43,7 +43,12 @@
         "name": "Průměrná venkovní teplota"
       },
       "heater_mode_raw": {
-        "name": "Režim topných těles"
+        "name": "Režim topných těles",
+        "state": {
+          "automatic": "Automatický",
+          "manual": "Ruční",
+          "off": "Vypnuto"
+        }
       },
       "buffer_temperature": {
         "name": "Teplota akumulační nádrže"

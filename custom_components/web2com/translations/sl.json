@@ -43,7 +43,12 @@
         "name": "Povprečna zunanja temperatura"
       },
       "heater_mode_raw": {
-        "name": "Način električnih grelcev"
+        "name": "Način električnih grelcev",
+        "state": {
+          "automatic": "Samodejno",
+          "manual": "Ročno",
+          "off": "Izklopljeno"
+        }
       },
       "buffer_temperature": {
         "name": "Temperatura zalogovnika"

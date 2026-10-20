@@ -2,9 +2,12 @@
 from __future__ import annotations
 
 from datetime import timedelta
+import json
+from pathlib import Path
 import logging
 
 from homeassistant.components.sensor import SensorEntity, SensorDeviceClass, SensorStateClass
+from homeassistant.helpers.entity import EntityCategory
 from homeassistant.config_entries import ConfigEntry
 from homeassistant.core import HomeAssistant
 from homeassistant.helpers.entity_platform import AddEntitiesCallback
@@ -41,9 +44,13 @@ class Web2ComCoordinator(DataUpdateCoordinator):
 async def async_setup_entry(hass: HomeAssistant, entry: ConfigEntry, async_add_entities: AddEntitiesCallback):
     config = {**entry.data, **entry.options}
     entities = []
-    for definition in DEFAULT_SENSORS:
+    extras = json.loads(Path(__file__).with_name("extra_sensors.json").read_text(encoding="utf-8"))
+    for definition in [*DEFAULT_SENSORS, *extras]:
         coordinator = Web2ComCoordinator(hass, config, definition)
-        await coordinator.async_refresh()
+        # Disabled entities have no listeners and must not read from the gateway.
+        # Existing enabled sensors retain their original startup behavior.
+        if definition.get("enabled_by_default", True):
+            await coordinator.async_refresh()
         entities.append(Web2ComSensor(coordinator, config, definition))
     async_add_entities(entities)
 
@@ -54,11 +61,21 @@ class Web2ComSensor(CoordinatorEntity, SensorEntity):
         self._definition = definition
         self._attr_has_entity_name = True
         self._attr_unique_id = f"web2com_{config['host']}_{definition['key']}"
-        self._attr_translation_key = definition['key']
+        if definition.get("enabled_by_default", True):
+            self._attr_translation_key = definition["key"]
+        else:
+            self._attr_name = definition["name"]
+            self._attr_entity_registry_enabled_default = False
+            self._attr_entity_category = EntityCategory.DIAGNOSTIC
+        self._enum_map = definition.get("enum_map") or {}
         self._attr_native_unit_of_measurement = definition.get('unit_of_measurement') or None
+        self._is_heater_mode = definition['key'] == 'heater_mode_raw'
         cls = definition.get('device_class')
         self._attr_device_class = SensorDeviceClass.TEMPERATURE if cls == 'temperature' else (SensorDeviceClass.ENERGY if cls == 'energy' else None)
         self._attr_state_class = SensorStateClass.TOTAL_INCREASING if cls == 'energy' else (SensorStateClass.MEASUREMENT if cls == 'temperature' else None)
+        if self._is_heater_mode:
+            self._attr_device_class = SensorDeviceClass.ENUM
+            self._attr_options = ['automatic', 'manual', 'off']
         self._attr_device_info = {
             'identifiers': {(DOMAIN, f"gateway_{config['host']}")},
             'name': 'Ochsner Web2Com', 'manufacturer': 'Ochsner',
@@ -70,7 +87,22 @@ class Web2ComSensor(CoordinatorEntity, SensorEntity):
         value = self.coordinator.data
         if value in ('', None):
             return None
-        if self._attr_device_class is not None:
+        if self._is_heater_mode:
+            try:
+                mode = float(value)
+            except (TypeError, ValueError):
+                return None
+            if not mode.is_integer():
+                return None
+            return {0: 'off', 1: 'automatic', 4: 'manual'}.get(int(mode))
+        if self._enum_map:
+            try:
+                numeric = float(value)
+                key = str(int(numeric)) if numeric.is_integer() else str(numeric)
+                return self._enum_map.get(key, str(value))
+            except (ValueError, TypeError):
+                return str(value)
+        if self._attr_device_class is not None or self._attr_native_unit_of_measurement is not None:
             try:
                 return float(value)
             except (ValueError, TypeError):

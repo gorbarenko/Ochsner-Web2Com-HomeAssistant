@@ -43,7 +43,12 @@
         "name": "Temperatura esterna media"
       },
       "heater_mode_raw": {
-        "name": "Modalità resistenze elettriche"
+        "name": "Modalità resistenze elettriche",
+        "state": {
+          "automatic": "Automatico",
+          "manual": "Manuale",
+          "off": "Spento"
+        }
       },
       "buffer_temperature": {
         "name": "Temperatura accumulo inerziale"

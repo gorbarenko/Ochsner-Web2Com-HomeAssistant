@@ -43,7 +43,12 @@
         "name": "Średnia temperatura zewnętrzna"
       },
       "heater_mode_raw": {
-        "name": "Tryb grzałek"
+        "name": "Tryb grzałek",
+        "state": {
+          "automatic": "Automatyczny",
+          "manual": "Ręczny",
+          "off": "Wyłączony"
+        }
       },
       "buffer_temperature": {
         "name": "Temperatura zbiornika buforowego"

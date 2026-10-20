@@ -39,3 +39,13 @@ Entity names and selector options are localized in ten languages. After upgradin
 ## Version 1.7.1
 
 Fixed localized entity names: sensor and selector entities now resolve their names from the translation keys. No SOAP commands, OIDs, polling intervals, or unique IDs changed. Existing manually customized entity names are not overwritten by Home Assistant.
+
+## v1.7.2
+
+The heater mode status sensor now reports translated states (Automatic, Manual, Off) instead of SOAP values 1, 4 and 0. Existing history remains numeric; no reconfiguration is required.
+
+## v1.8.0 read-only diagnostic catalog
+
+Added 54 **disabled by default** diagnostic sensors, derived from the Web2Com OID scan and manufacturer VarIdentTexte/AufzaehlTexte dictionaries. Existing 13 sensors and the existing heater mode select keep the same unique IDs and behavior. Each diagnostic entity can be enabled individually in Home Assistant Settings → Devices & services → Entities; an enabled sensor polls every 300 seconds. Enable sparingly to avoid overwhelming the Web2Com gateway.
+
+The additional sensors use the original English label when no verified Ukrainian translation is present. Enum mappings are resolved from the manufacturer XML dictionary. No new write functions or OEM/authentication changes are introduced. Check original sensors with corrected labels (underfloor setpoint and radiator sensors) against their historical entity IDs.

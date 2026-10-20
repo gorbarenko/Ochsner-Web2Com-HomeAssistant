@@ -43,7 +43,12 @@
         "name": "Average outdoor temperature"
       },
       "heater_mode_raw": {
-        "name": "Heater mode"
+        "name": "Heater mode",
+        "state": {
+          "automatic": "Automatic",
+          "manual": "Manual",
+          "off": "Off"
+        }
       },
       "buffer_temperature": {
         "name": "Buffer tank temperature"
@@ -64,16 +69,16 @@
         "name": "Underfloor heating supply"
       },
       "underfloor_setpoint": {
-        "name": "Underfloor heating target"
+        "name": "Setpoint room temperature"
       },
       "mixing_valve": {
         "name": "Mixing valve position"
       },
       "radiator_flow": {
-        "name": "Radiator supply"
+        "name": "Setpoint heating circuit flow temperature"
       },
       "radiator_setpoint": {
-        "name": "Radiator target"
+        "name": "Setpoint room temperature"
       }
     },
     "select": {

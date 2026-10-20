@@ -43,7 +43,12 @@
         "name": "Gemittelte Außentemperatur"
       },
       "heater_mode_raw": {
-        "name": "Heizstabmodus"
+        "name": "Heizstabmodus",
+        "state": {
+          "automatic": "Automatisch",
+          "manual": "Manuell",
+          "off": "Aus"
+        }
       },
       "buffer_temperature": {
         "name": "Pufferspeichertemperatur"

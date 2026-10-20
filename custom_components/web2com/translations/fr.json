@@ -43,7 +43,12 @@
         "name": "Température extérieure moyenne"
       },
       "heater_mode_raw": {
-        "name": "Mode des résistances électriques"
+        "name": "Mode des résistances électriques",
+        "state": {
+          "automatic": "Automatique",
+          "manual": "Manuel",
+          "off": "Arrêt"
+        }
       },
       "buffer_temperature": {
         "name": "Température du ballon tampon"
