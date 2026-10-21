@@ -1,4 +1,4 @@
-"""Ochsner Web2Com v1.9.1."""
+"""Ochsner Web2Com v1.9.2."""
 from homeassistant.const import Platform
 from homeassistant.helpers.storage import Store
 from homeassistant.helpers import device_registry as dr, entity_registry as er

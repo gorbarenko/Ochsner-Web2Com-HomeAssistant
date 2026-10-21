@@ -35,4 +35,5 @@ class Web2ComEntity(CoordinatorEntity):
                 'german_name': self.definition.get('german_name'),
                 'last_success': datetime.fromtimestamp(stamp, timezone.utc).isoformat() if stamp else None,
                 'stale': self.coordinator.engine.stale(self.oid, self.definition.get('scan_interval', 60)),
-                'last_error': self.coordinator.engine.errors.get(self.oid)}
+                'last_error': self.coordinator.engine.errors.get(self.oid),
+                'last_write_error': self.coordinator.engine.write_errors.get(self.oid)}

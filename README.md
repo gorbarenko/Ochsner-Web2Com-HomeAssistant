@@ -2,7 +2,7 @@
 
 # Ochsner Web2Com for Home Assistant
 
-Local integration for Ochsner Room Terminal / Web2Com. Version **1.9.1**, integration domain **`web2com`**.
+Local integration for Ochsner Room Terminal / Web2Com. Version **1.9.2**, integration domain **`web2com`**.
 
 ## Requirements
 
@@ -17,7 +17,7 @@ The supplied address map assigns `/1/2/4/...` to heating circuit 1, `/1/2/5/...`
 
 1. Open **HACS → Custom repositories**.
 2. Add `https://github.com/gorbarenko/Ochsner-Web2Com-HomeAssistant` with category **Integration**.
-3. Download **Ochsner Web2Com**. Version 1.9.1 will be available once published in that repository.
+3. Download **Ochsner Web2Com**. Version 1.9.2 will be available once published in that repository.
 4. Restart Home Assistant.
 5. Open **Settings → Devices & services → Add integration → Ochsner Web2Com**.
 6. Enter the gateway hostname or IPv4 address **without `http://`**, your username and password, and the authentication method.
@@ -59,13 +59,14 @@ Additional diagnostic sensors are disabled by default. Enable the ones you need 
 
 Each circuit provides temperature controls for the heating curve, design temperatures, heating limit, day/night settings and manual-mode setpoint. Mode selectors are provided for both circuits and electric heaters.
 
-Controls remain unavailable until the gateway supplies valid write permissions and the required limits or supported modes. Before every write, the integration reads these permissions again and checks the requested value against the controller's range and step. After writing, it reads the value back to confirm the change.
+Controls remain unavailable until the gateway supplies valid write permissions and the required limits or supported modes. Before every write, the integration reads these permissions again and checks the requested value against the controller's range and step. After writing, it reads the value back after pauses of 1, 2 and 4 seconds. Only reads are retried; the write is sent once. A controller that takes longer may still apply the command after the confirmation window.
 
 - Circuit modes: standby, automatic, normal heating, economy heating and manual — only those confirmed by the controller are offered.
 - Electric heater modes: automatic and manual. **Off is displayed as a sensor state, but is not offered as a write command**, because support for writing that mode has not been confirmed.
+- If readback succeeds but differs from the requested value, the actual mode remains visible and the control stays available. This is reported as a write-confirmation error, not stale data. Details are available in the `last_write_error` attribute. Ordinary polling continues and shows subsequent controller changes.
 - A failed or timed-out write is not automatically repeated. Check the actual controller setting before trying again.
 
-Hardware write testing has not been performed for this release. Verify readings and parameter meanings against your controller before using controls.
+Automated testing uses simulated controller responses. This build has not been tested on physical hardware. Verify readings and parameter meanings against your controller before using controls.
 
 ## Connection failures and stale data
 
@@ -84,3 +85,11 @@ Readings are staggered to reduce gateway load. Update intervals vary from 15 to 
 - **Logo does not appear:** local integration images require HA 2026.3+. Restart HA and refresh the browser after updating.
 
 For support, open an [issue](https://github.com/gorbarenko/Ochsner-Web2Com-HomeAssistant/issues) with your Home Assistant version, controller model and relevant error messages. Remove passwords and other private information before sharing logs.
+
+## Changes in 1.9.2
+
+- Fixed controls becoming unavailable after a successful read returned a different value from the requested one.
+- Separated write-confirmation errors from stale-data indicators.
+- Spaced readback attempts to allow controller changes to settle; transient read failures no longer stop all remaining readback attempts.
+- Error details include the OID and requested/returned values when available.
+- Preserved existing entity identifiers, translations, branding and installation layout.

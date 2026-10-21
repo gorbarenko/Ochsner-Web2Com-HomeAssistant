@@ -13,6 +13,7 @@ class PollEngine:
         self.clock, self.pause = clock, pause
         self.lock = threading.Lock()
         self.cache, self.metadata, self.errors, self.due, self.failures = {}, {}, {}, {}, {}
+        self.write_errors = {}
         self.group_retry = 0
         self.last_request = 0
 
@@ -115,13 +116,30 @@ class PollEngine:
                     raise ValueError('Value violates controller bounds or step')
             try:
                 self.request(self.client.write, oid, value)
-                # Only reads may be retried, never an uncertain write.
-                for _ in range(3):
-                    actual = self.request(self.client.read, oid, control.get('code'))
-                    self.accept(oid, actual)
-                    if math.isclose(actual['value'], value, rel_tol=0, abs_tol=1e-6):
-                        return self.snapshot()
-                raise Web2ComSOAPError('Readback does not match requested value')
             except (Web2ComSOAPError, ValueError):
                 self.errors[oid] = 'write_not_confirmed'
+                self.write_errors[oid] = 'Write response not confirmed; command was not retried'
+                self.due[oid] = 0
                 raise
+            # Only reads may be retried. Give asynchronous controllers time to settle.
+            actual = None
+            for delay in (1, 2, 4):
+                self.pause(delay)
+                try:
+                    actual = self.request(self.client.read, oid, control.get('code'))
+                    self.accept(oid, actual)
+                except (Web2ComSOAPError, ValueError) as err:
+                    self.errors[oid] = type(err).__name__
+                    continue
+                if math.isclose(actual['value'], value, rel_tol=0, abs_tol=1e-6):
+                    self.write_errors.pop(oid, None)
+                    return self.snapshot()
+            self.due[oid] = 0
+            if oid in self.errors:
+                message = f'Write not confirmed for {oid}: requested {value:g}; latest readback failed'
+            else:
+                # A fresh but different value is NOT a stale reading.
+                message = (f'Write not confirmed for {oid}: requested {value:g}, '
+                           f'controller returned {actual["value"]:g}')
+            self.write_errors[oid] = message
+            raise Web2ComSOAPError(message)
