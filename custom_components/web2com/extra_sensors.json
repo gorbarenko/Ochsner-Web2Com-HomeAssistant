@@ -24,7 +24,8 @@
       "12": "Passive/active cooling"
     },
     "properties": "-r-- enum = 0,1",
-    "enabled_by_default": false
+    "enabled_by_default": false,
+    "german_name": "Wärmeerzeuger Typ"
   },
   {
     "id": "/1/2/2/106/1",
@@ -41,7 +42,8 @@
       "2": "HG in HP outlet"
     },
     "properties": "-r-- enum = 0,1",
-    "enabled_by_default": false
+    "enabled_by_default": false,
+    "german_name": "Applikationstyp E Zusatzheizung"
   },
   {
     "id": "/1/2/2/107/0",
@@ -68,7 +70,8 @@
       "12": "Passive/active cooling"
     },
     "properties": "-r-- enum = 0,1",
-    "enabled_by_default": false
+    "enabled_by_default": false,
+    "german_name": "Wärmeerzeuger Typ"
   },
   {
     "id": "/1/2/2/107/1",
@@ -85,7 +88,8 @@
       "2": "HG in HP outlet"
     },
     "properties": "-r-- enum = 0,1",
-    "enabled_by_default": false
+    "enabled_by_default": false,
+    "german_name": "Applikationstyp E Zusatzheizung"
   },
   {
     "id": "/1/2/2/124/0",
@@ -98,7 +102,8 @@
     "device_class": null,
     "enum_map": null,
     "properties": "-r--",
-    "enabled_by_default": false
+    "enabled_by_default": false,
+    "german_name": "Zusatzheizung"
   },
   {
     "id": "/1/2/2/126/0",
@@ -111,7 +116,8 @@
     "device_class": null,
     "enum_map": null,
     "properties": "-r--",
-    "enabled_by_default": false
+    "enabled_by_default": false,
+    "german_name": "Status Wärmeerzeuger"
   },
   {
     "id": "/1/2/2/156/0",
@@ -128,7 +134,8 @@
       "2": "HG in HP outlet"
     },
     "properties": "-r-- enum = 0,1",
-    "enabled_by_default": false
+    "enabled_by_default": false,
+    "german_name": "Applikationstyp E Zusatzheizung"
   },
   {
     "id": "/1/2/4/99/0",
@@ -141,7 +148,8 @@
     "device_class": "temperature",
     "enum_map": null,
     "properties": "-rw-",
-    "enabled_by_default": false
+    "enabled_by_default": false,
+    "german_name": "Fusspunkt Vorlauftemperatur Heizkurve"
   },
   {
     "id": "/1/2/4/99/1",
@@ -154,7 +162,8 @@
     "device_class": "temperature",
     "enum_map": null,
     "properties": "-rw-",
-    "enabled_by_default": false
+    "enabled_by_default": false,
+    "german_name": "Heizgrenze Absenkbetrieb"
   },
   {
     "id": "/1/2/4/99/2",
@@ -167,7 +176,8 @@
     "device_class": "temperature",
     "enum_map": null,
     "properties": "-rw-",
-    "enabled_by_default": false
+    "enabled_by_default": false,
+    "german_name": "Norm Aussentemperatur Heizkurve"
   },
   {
     "id": "/1/2/4/99/3",
@@ -180,7 +190,8 @@
     "device_class": "temperature",
     "enum_map": null,
     "properties": "-rw-",
-    "enabled_by_default": false
+    "enabled_by_default": false,
+    "german_name": "VLT bei Norm Aussentemperatur Heizkurve"
   },
   {
     "id": "/1/2/4/99/4",
@@ -193,7 +204,8 @@
     "device_class": "temperature",
     "enum_map": null,
     "properties": "-rw-",
-    "enabled_by_default": false
+    "enabled_by_default": false,
+    "german_name": "Heizgrenze "
   },
   {
     "id": "/1/2/4/99/5",
@@ -206,7 +218,8 @@
     "device_class": "temperature",
     "enum_map": null,
     "properties": "-rw-",
-    "enabled_by_default": false
+    "enabled_by_default": false,
+    "german_name": "RaumtempTag Heizbetrieb"
   },
   {
     "id": "/1/2/4/99/6",
@@ -219,7 +232,8 @@
     "device_class": "temperature",
     "enum_map": null,
     "properties": "-rw-",
-    "enabled_by_default": false
+    "enabled_by_default": false,
+    "german_name": "RaumtempNacht Heizbetrieb"
   },
   {
     "id": "/1/2/4/99/7",
@@ -232,7 +246,8 @@
     "device_class": null,
     "enum_map": null,
     "properties": "-rw-",
-    "enabled_by_default": false
+    "enabled_by_default": false,
+    "german_name": "Fernbedienung vorhanden"
   },
   {
     "id": "/1/2/4/103/0",
@@ -245,7 +260,8 @@
     "device_class": "temperature",
     "enum_map": null,
     "properties": "-rw-",
-    "enabled_by_default": false
+    "enabled_by_default": false,
+    "german_name": "Solltemperatur Handbetrieb"
   },
   {
     "id": "/1/2/4/103/1",
@@ -265,7 +281,8 @@
       "5": "Setpoint via BMS (0-10VDC)"
     },
     "properties": "-r-- enum = 0,1,2,3,4,5",
-    "enabled_by_default": false
+    "enabled_by_default": false,
+    "german_name": "Applikationstyp Heizkreis"
   },
   {
     "id": "/1/2/4/106/0",
@@ -278,7 +295,8 @@
     "device_class": "temperature",
     "enum_map": null,
     "properties": "-rw-",
-    "enabled_by_default": false
+    "enabled_by_default": false,
+    "german_name": "Heizgrenze Absenkbetrieb"
   },
   {
     "id": "/1/2/4/107/0",
@@ -300,7 +318,8 @@
       "10": "According mastercircuit"
     },
     "properties": "-rw- enum = 0,1,4,5,7",
-    "enabled_by_default": false
+    "enabled_by_default": false,
+    "german_name": "Betriebswahl Heizung"
   },
   {
     "id": "/1/2/4/107/1",
@@ -313,7 +332,8 @@
     "device_class": "temperature",
     "enum_map": null,
     "properties": "-rw-",
-    "enabled_by_default": false
+    "enabled_by_default": false,
+    "german_name": "Solltemperatur Handbetrieb"
   },
   {
     "id": "/1/2/4/108/0",
@@ -326,7 +346,8 @@
     "device_class": "temperature",
     "enum_map": null,
     "properties": "-rw-",
-    "enabled_by_default": false
+    "enabled_by_default": false,
+    "german_name": "Fusspunkt Vorlauftemperatur Heizkurve"
   },
   {
     "id": "/1/2/4/108/1",
@@ -339,7 +360,8 @@
     "device_class": "temperature",
     "enum_map": null,
     "properties": "-rw-",
-    "enabled_by_default": false
+    "enabled_by_default": false,
+    "german_name": "Norm Aussentemperatur Heizkurve"
   },
   {
     "id": "/1/2/4/108/2",
@@ -352,7 +374,8 @@
     "device_class": "temperature",
     "enum_map": null,
     "properties": "-rw-",
-    "enabled_by_default": false
+    "enabled_by_default": false,
+    "german_name": "VLT bei Norm Aussentemperatur Heizkurve"
   },
   {
     "id": "/1/2/4/108/3",
@@ -365,7 +388,8 @@
     "device_class": "temperature",
     "enum_map": null,
     "properties": "-rw-",
-    "enabled_by_default": false
+    "enabled_by_default": false,
+    "german_name": "Heizgrenze "
   },
   {
     "id": "/1/2/4/108/4",
@@ -378,7 +402,8 @@
     "device_class": "temperature",
     "enum_map": null,
     "properties": "-rw-",
-    "enabled_by_default": false
+    "enabled_by_default": false,
+    "german_name": "RaumtempTag Heizbetrieb"
   },
   {
     "id": "/1/2/4/108/5",
@@ -391,7 +416,8 @@
     "device_class": "temperature",
     "enum_map": null,
     "properties": "-rw-",
-    "enabled_by_default": false
+    "enabled_by_default": false,
+    "german_name": "RaumtempNacht Heizbetrieb"
   },
   {
     "id": "/1/2/4/117/0",
@@ -404,7 +430,8 @@
     "device_class": null,
     "enum_map": null,
     "properties": "-r--",
-    "enabled_by_default": false
+    "enabled_by_default": false,
+    "german_name": "Heizkreispumpe"
   },
   {
     "id": "/1/2/4/119/0",
@@ -417,7 +444,8 @@
     "device_class": null,
     "enum_map": null,
     "properties": "-r--",
-    "enabled_by_default": false
+    "enabled_by_default": false,
+    "german_name": "Status Heizkreis"
   },
   {
     "id": "/1/2/4/119/5",
@@ -430,7 +458,8 @@
     "device_class": "temperature",
     "enum_map": null,
     "properties": "-r--",
-    "enabled_by_default": false
+    "enabled_by_default": false,
+    "german_name": "Sollwert Heizkreis Vorlauftemperatur"
   },
   {
     "id": "/1/2/5/99/0",
@@ -443,7 +472,8 @@
     "device_class": "temperature",
     "enum_map": null,
     "properties": "-rw-",
-    "enabled_by_default": false
+    "enabled_by_default": false,
+    "german_name": "Fusspunkt Vorlauftemperatur Heizkurve"
   },
   {
     "id": "/1/2/5/99/1",
@@ -456,7 +486,8 @@
     "device_class": "temperature",
     "enum_map": null,
     "properties": "-rw-",
-    "enabled_by_default": false
+    "enabled_by_default": false,
+    "german_name": "Heizgrenze Absenkbetrieb"
   },
   {
     "id": "/1/2/5/99/2",
@@ -469,7 +500,8 @@
     "device_class": "temperature",
     "enum_map": null,
     "properties": "-rw-",
-    "enabled_by_default": false
+    "enabled_by_default": false,
+    "german_name": "Norm Aussentemperatur Heizkurve"
   },
   {
     "id": "/1/2/5/99/3",
@@ -482,7 +514,8 @@
     "device_class": "temperature",
     "enum_map": null,
     "properties": "-rw-",
-    "enabled_by_default": false
+    "enabled_by_default": false,
+    "german_name": "VLT bei Norm Aussentemperatur Heizkurve"
   },
   {
     "id": "/1/2/5/99/4",
@@ -495,7 +528,8 @@
     "device_class": "temperature",
     "enum_map": null,
     "properties": "-rw-",
-    "enabled_by_default": false
+    "enabled_by_default": false,
+    "german_name": "Heizgrenze "
   },
   {
     "id": "/1/2/5/99/5",
@@ -508,7 +542,8 @@
     "device_class": "temperature",
     "enum_map": null,
     "properties": "-rw-",
-    "enabled_by_default": false
+    "enabled_by_default": false,
+    "german_name": "RaumtempTag Heizbetrieb"
   },
   {
     "id": "/1/2/5/99/6",
@@ -521,7 +556,8 @@
     "device_class": "temperature",
     "enum_map": null,
     "properties": "-rw-",
-    "enabled_by_default": false
+    "enabled_by_default": false,
+    "german_name": "RaumtempNacht Heizbetrieb"
   },
   {
     "id": "/1/2/5/99/7",
@@ -534,7 +570,8 @@
     "device_class": null,
     "enum_map": null,
     "properties": "-rw-",
-    "enabled_by_default": false
+    "enabled_by_default": false,
+    "german_name": "Fernbedienung vorhanden"
   },
   {
     "id": "/1/2/5/103/0",
@@ -547,7 +584,8 @@
     "device_class": "temperature",
     "enum_map": null,
     "properties": "-rw-",
-    "enabled_by_default": false
+    "enabled_by_default": false,
+    "german_name": "Solltemperatur Handbetrieb"
   },
   {
     "id": "/1/2/5/103/1",
@@ -567,7 +605,8 @@
       "5": "Setpoint via BMS (0-10VDC)"
     },
     "properties": "-r-- enum = 0,1,2,3,4,5",
-    "enabled_by_default": false
+    "enabled_by_default": false,
+    "german_name": "Applikationstyp Heizkreis"
   },
   {
     "id": "/1/2/5/106/0",
@@ -580,7 +619,8 @@
     "device_class": "temperature",
     "enum_map": null,
     "properties": "-rw-",
-    "enabled_by_default": false
+    "enabled_by_default": false,
+    "german_name": "Heizgrenze Absenkbetrieb"
   },
   {
     "id": "/1/2/5/107/0",
@@ -602,7 +642,8 @@
       "10": "According mastercircuit"
     },
     "properties": "-rw- enum = 0,1,4,5,7",
-    "enabled_by_default": false
+    "enabled_by_default": false,
+    "german_name": "Betriebswahl Heizung"
   },
   {
     "id": "/1/2/5/107/1",
@@ -615,7 +656,8 @@
     "device_class": "temperature",
     "enum_map": null,
     "properties": "-rw-",
-    "enabled_by_default": false
+    "enabled_by_default": false,
+    "german_name": "Solltemperatur Handbetrieb"
   },
   {
     "id": "/1/2/5/108/0",
@@ -628,7 +670,8 @@
     "device_class": "temperature",
     "enum_map": null,
     "properties": "-rw-",
-    "enabled_by_default": false
+    "enabled_by_default": false,
+    "german_name": "Fusspunkt Vorlauftemperatur Heizkurve"
   },
   {
     "id": "/1/2/5/108/1",
@@ -641,7 +684,8 @@
     "device_class": "temperature",
     "enum_map": null,
     "properties": "-rw-",
-    "enabled_by_default": false
+    "enabled_by_default": false,
+    "german_name": "Norm Aussentemperatur Heizkurve"
   },
   {
     "id": "/1/2/5/108/2",
@@ -654,7 +698,8 @@
     "device_class": "temperature",
     "enum_map": null,
     "properties": "-rw-",
-    "enabled_by_default": false
+    "enabled_by_default": false,
+    "german_name": "VLT bei Norm Aussentemperatur Heizkurve"
   },
   {
     "id": "/1/2/5/108/3",
@@ -667,7 +712,8 @@
     "device_class": "temperature",
     "enum_map": null,
     "properties": "-rw-",
-    "enabled_by_default": false
+    "enabled_by_default": false,
+    "german_name": "Heizgrenze "
   },
   {
     "id": "/1/2/5/108/4",
@@ -680,7 +726,8 @@
     "device_class": "temperature",
     "enum_map": null,
     "properties": "-rw-",
-    "enabled_by_default": false
+    "enabled_by_default": false,
+    "german_name": "RaumtempTag Heizbetrieb"
   },
   {
     "id": "/1/2/5/108/5",
@@ -693,7 +740,8 @@
     "device_class": "temperature",
     "enum_map": null,
     "properties": "-rw-",
-    "enabled_by_default": false
+    "enabled_by_default": false,
+    "german_name": "RaumtempNacht Heizbetrieb"
   },
   {
     "id": "/1/2/5/117/0",
@@ -706,7 +754,8 @@
     "device_class": null,
     "enum_map": null,
     "properties": "-r--",
-    "enabled_by_default": false
+    "enabled_by_default": false,
+    "german_name": "Heizkreispumpe"
   },
   {
     "id": "/1/2/5/119/0",
@@ -719,7 +768,8 @@
     "device_class": null,
     "enum_map": null,
     "properties": "-r--",
-    "enabled_by_default": false
+    "enabled_by_default": false,
+    "german_name": "Status Heizkreis"
   },
   {
     "id": "/1/2/5/119/1",
@@ -732,7 +782,8 @@
     "device_class": "temperature",
     "enum_map": null,
     "properties": "-r--",
-    "enabled_by_default": false
+    "enabled_by_default": false,
+    "german_name": "Aussentemperatur"
   },
   {
     "id": "/1/2/5/119/2",
@@ -745,7 +796,8 @@
     "device_class": "temperature",
     "enum_map": null,
     "properties": "-r--",
-    "enabled_by_default": false
+    "enabled_by_default": false,
+    "german_name": "Mittelwert Aussentemperatur"
   },
   {
     "id": "/1/2/5/156/0",
@@ -758,7 +810,8 @@
     "device_class": null,
     "enum_map": null,
     "properties": "-rw-",
-    "enabled_by_default": false
+    "enabled_by_default": false,
+    "german_name": "Fernbedienung vorhanden"
   },
   {
     "id": "/1/2/5/156/1",
@@ -778,6 +831,7 @@
       "5": "Setpoint via BMS (0-10VDC)"
     },
     "properties": "-r-- enum = 0,1,2,3,4,5",
-    "enabled_by_default": false
+    "enabled_by_default": false,
+    "german_name": "Applikationstyp Heizkreis"
   }
 ]

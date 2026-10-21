@@ -1,13 +1,15 @@
 {
   "domain": "web2com",
   "name": "Ochsner Web2Com",
-  "version": "1.9.0",
-  "codeowners": [],
+  "version": "1.9.1",
+  "codeowners": [
+    "@gorbarenko"
+  ],
   "dependencies": [],
   "integration_type": "hub",
   "iot_class": "local_polling",
-  "requirements": [
-    "ochsner-web2com==0.1.7"
-  ],
-  "config_flow": true
+  "requirements": [],
+  "config_flow": true,
+  "documentation": "https://github.com/gorbarenko/Ochsner-Web2Com-HomeAssistant",
+  "issue_tracker": "https://github.com/gorbarenko/Ochsner-Web2Com-HomeAssistant/issues"
 }

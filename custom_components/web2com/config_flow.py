@@ -5,8 +5,7 @@ import voluptuous as vol
 from homeassistant import config_entries
 from homeassistant.core import callback
 from homeassistant.const import CONF_USERNAME, CONF_PASSWORD
-from homeassistant.helpers import selector
-import ochsner_web2com.web2com as web2com
+from .soap_client import Web2ComSOAPClient
 
 from .const import DOMAIN
 
@@ -27,15 +26,11 @@ def _schema(defaults=None):
 
 
 def _test_connection(data):
-    auth = web2com.AUTH.BASIC if data[CONF_AUTHENTICATION] == "Basic" else web2com.AUTH.DIGEST
-    client = web2com.Service(data[CONF_HOST], data[CONF_USERNAME], data[CONF_PASSWORD], auth=auth)
-    result = client.get_value("/1/2/2/126/1")
-    if not isinstance(result, (tuple, list)) or len(result) < 2 or result[0] != 200:
-        raise ValueError(f"Web2Com connection verification failed: {result!r}")
+    Web2ComSOAPClient(data).read("/1/2/2/126/1")
 
 
 class Web2ComConfigFlow(config_entries.ConfigFlow, domain=DOMAIN):
-    VERSION = 1
+    VERSION = 2
 
     async def async_step_user(self, user_input=None):
         errors = {}

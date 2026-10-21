@@ -7,7 +7,8 @@
           "host": "IP-Adresse oder Hostname",
           "username": "Benutzername",
           "password": "Passwort",
-          "authentication": "Authentifizierung"
+          "authentication": "Authentifizierung",
+          "auto_discover": "Discover additional sensors (read only)"
         }
       }
     },
@@ -26,7 +27,8 @@
           "host": "IP-Adresse oder Hostname",
           "username": "Benutzername",
           "password": "Passwort",
-          "authentication": "Authentifizierung"
+          "authentication": "Authentifizierung",
+          "auto_discover": "Discover additional sensors (read only)"
         }
       }
     },
@@ -79,6 +81,257 @@
       },
       "radiator_setpoint": {
         "name": "Solltemperatur Heizkörper"
+      },
+      "oid_1_2_2_106_0": {
+        "name": "Heat generator type",
+        "state": {
+          "Inactive": "Inactive",
+          "Complementary heating": "Complementary heating",
+          "Oil- gas boiler": "Oil- gas boiler",
+          "Wood boiler": "Wood boiler",
+          "Modulationg wood boiler": "Modulationg wood boiler",
+          "Heat pump": "Heat pump",
+          "Active cooling": "Active cooling",
+          "Oil gas exhaust pressure": "Oil gas exhaust pressure",
+          "Heat plant": "Heat plant",
+          "Passive cooling": "Passive cooling",
+          "Wood pellet boiler": "Wood pellet boiler",
+          "Wood pellet burner": "Wood pellet burner",
+          "Passive/active cooling": "Passive/active cooling"
+        }
+      },
+      "oid_1_2_2_106_1": {
+        "name": "Application type electric booster heating",
+        "state": {
+          "No heat generator": "No heat generator",
+          "HG in storage tank": "HG in storage tank",
+          "HG in HP outlet": "HG in HP outlet"
+        }
+      },
+      "oid_1_2_2_107_0": {
+        "name": "Heat generator type",
+        "state": {
+          "Inactive": "Inactive",
+          "Complementary heating": "Complementary heating",
+          "Oil- gas boiler": "Oil- gas boiler",
+          "Wood boiler": "Wood boiler",
+          "Modulationg wood boiler": "Modulationg wood boiler",
+          "Heat pump": "Heat pump",
+          "Active cooling": "Active cooling",
+          "Oil gas exhaust pressure": "Oil gas exhaust pressure",
+          "Heat plant": "Heat plant",
+          "Passive cooling": "Passive cooling",
+          "Wood pellet boiler": "Wood pellet boiler",
+          "Wood pellet burner": "Wood pellet burner",
+          "Passive/active cooling": "Passive/active cooling"
+        }
+      },
+      "oid_1_2_2_107_1": {
+        "name": "Application type electric booster heating",
+        "state": {
+          "No heat generator": "No heat generator",
+          "HG in storage tank": "HG in storage tank",
+          "HG in HP outlet": "HG in HP outlet"
+        }
+      },
+      "oid_1_2_2_124_0": {
+        "name": "Auxiliary heating"
+      },
+      "oid_1_2_2_126_0": {
+        "name": "Status heat generator"
+      },
+      "oid_1_2_2_156_0": {
+        "name": "Application type electric booster heating",
+        "state": {
+          "No heat generator": "No heat generator",
+          "HG in storage tank": "HG in storage tank",
+          "HG in HP outlet": "HG in HP outlet"
+        }
+      },
+      "oid_1_2_4_99_0": {
+        "name": "Base point temperature heating curve"
+      },
+      "oid_1_2_4_99_1": {
+        "name": "Heating limitation lowering operation"
+      },
+      "oid_1_2_4_99_2": {
+        "name": "Design outside temperature"
+      },
+      "oid_1_2_4_99_3": {
+        "name": "Design supply temperature"
+      },
+      "oid_1_2_4_99_4": {
+        "name": "Heating limit outdoor temperature"
+      },
+      "oid_1_2_4_99_5": {
+        "name": "Room temp day heating operation"
+      },
+      "oid_1_2_4_99_6": {
+        "name": "Room temp night Heating operation"
+      },
+      "oid_1_2_4_99_7": {
+        "name": "Remote control available"
+      },
+      "oid_1_2_4_103_0": {
+        "name": "Setpoint temperature manual mode"
+      },
+      "oid_1_2_4_103_1": {
+        "name": "Application type heating circuit",
+        "state": {
+          "None": "None",
+          "Direct circuit H": "Direct circuit H",
+          "Direct circuit H/C": "Direct circuit H/C",
+          "Mixed circuit H": "Mixed circuit H",
+          "Mixed circuit H/C": "Mixed circuit H/C",
+          "Setpoint via BMS (0-10VDC)": "Setpoint via BMS (0-10VDC)"
+        }
+      },
+      "oid_1_2_4_106_0": {
+        "name": "Heating limitation lowering operation"
+      },
+      "oid_1_2_4_107_0": {
+        "name": "Operating mode selection heating",
+        "state": {
+          "Standby mode": "Standby mode",
+          "Automatic": "Automatic",
+          "Normal heating mode": "Normal heating mode",
+          "Economy heating mode": "Economy heating mode",
+          "Summer mode": "Summer mode",
+          "Manual heating mode": "Manual heating mode",
+          "Manual cooling mode": "Manual cooling mode",
+          "According mastercircuit": "According mastercircuit"
+        }
+      },
+      "oid_1_2_4_107_1": {
+        "name": "Setpoint temperature manual mode"
+      },
+      "oid_1_2_4_108_0": {
+        "name": "Base point temperature heating curve"
+      },
+      "oid_1_2_4_108_1": {
+        "name": "Design outside temperature"
+      },
+      "oid_1_2_4_108_2": {
+        "name": "Design supply temperature"
+      },
+      "oid_1_2_4_108_3": {
+        "name": "Heating limit outdoor temperature"
+      },
+      "oid_1_2_4_108_4": {
+        "name": "Room temp day heating operation"
+      },
+      "oid_1_2_4_108_5": {
+        "name": "Room temp night Heating operation"
+      },
+      "oid_1_2_4_117_0": {
+        "name": "Circuit pump heating"
+      },
+      "oid_1_2_4_119_0": {
+        "name": "Status heating circuit"
+      },
+      "oid_1_2_4_119_5": {
+        "name": "Setpoint heating circuit flow temperature"
+      },
+      "oid_1_2_5_99_0": {
+        "name": "Base point temperature heating curve"
+      },
+      "oid_1_2_5_99_1": {
+        "name": "Heating limitation lowering operation"
+      },
+      "oid_1_2_5_99_2": {
+        "name": "Design outside temperature"
+      },
+      "oid_1_2_5_99_3": {
+        "name": "Design supply temperature"
+      },
+      "oid_1_2_5_99_4": {
+        "name": "Heating limit outdoor temperature"
+      },
+      "oid_1_2_5_99_5": {
+        "name": "Room temp day heating operation"
+      },
+      "oid_1_2_5_99_6": {
+        "name": "Room temp night Heating operation"
+      },
+      "oid_1_2_5_99_7": {
+        "name": "Remote control available"
+      },
+      "oid_1_2_5_103_0": {
+        "name": "Setpoint temperature manual mode"
+      },
+      "oid_1_2_5_103_1": {
+        "name": "Application type heating circuit",
+        "state": {
+          "None": "None",
+          "Direct circuit H": "Direct circuit H",
+          "Direct circuit H/C": "Direct circuit H/C",
+          "Mixed circuit H": "Mixed circuit H",
+          "Mixed circuit H/C": "Mixed circuit H/C",
+          "Setpoint via BMS (0-10VDC)": "Setpoint via BMS (0-10VDC)"
+        }
+      },
+      "oid_1_2_5_106_0": {
+        "name": "Heating limitation lowering operation"
+      },
+      "oid_1_2_5_107_0": {
+        "name": "Operating mode selection heating",
+        "state": {
+          "Standby mode": "Standby mode",
+          "Automatic": "Automatic",
+          "Normal heating mode": "Normal heating mode",
+          "Economy heating mode": "Economy heating mode",
+          "Summer mode": "Summer mode",
+          "Manual heating mode": "Manual heating mode",
+          "Manual cooling mode": "Manual cooling mode",
+          "According mastercircuit": "According mastercircuit"
+        }
+      },
+      "oid_1_2_5_107_1": {
+        "name": "Setpoint temperature manual mode"
+      },
+      "oid_1_2_5_108_0": {
+        "name": "Base point temperature heating curve"
+      },
+      "oid_1_2_5_108_1": {
+        "name": "Design outside temperature"
+      },
+      "oid_1_2_5_108_2": {
+        "name": "Design supply temperature"
+      },
+      "oid_1_2_5_108_3": {
+        "name": "Heating limit outdoor temperature"
+      },
+      "oid_1_2_5_108_4": {
+        "name": "Room temp day heating operation"
+      },
+      "oid_1_2_5_108_5": {
+        "name": "Room temp night Heating operation"
+      },
+      "oid_1_2_5_117_0": {
+        "name": "Circuit pump heating"
+      },
+      "oid_1_2_5_119_0": {
+        "name": "Status heating circuit"
+      },
+      "oid_1_2_5_119_1": {
+        "name": "Outdoor temperature"
+      },
+      "oid_1_2_5_119_2": {
+        "name": "Outdoor temperature average value"
+      },
+      "oid_1_2_5_156_0": {
+        "name": "Remote control available"
+      },
+      "oid_1_2_5_156_1": {
+        "name": "Application type heating circuit",
+        "state": {
+          "None": "None",
+          "Direct circuit H": "Direct circuit H",
+          "Direct circuit H/C": "Direct circuit H/C",
+          "Mixed circuit H": "Mixed circuit H",
+          "Mixed circuit H/C": "Mixed circuit H/C",
+          "Setpoint via BMS (0-10VDC)": "Setpoint via BMS (0-10VDC)"
+        }
       }
     },
     "select": {
@@ -89,6 +342,75 @@
           "manual": "Manuell",
           "off": "Aus"
         }
+      },
+      "hc1_operating_mode": {
+        "name": "Heating mode",
+        "state": {
+          "standby": "Standby",
+          "automatic": "Automatic",
+          "normal": "Normal heating",
+          "reduced": "Economy heating",
+          "manual": "Manual"
+        }
+      },
+      "hc2_operating_mode": {
+        "name": "Heating mode",
+        "state": {
+          "standby": "Standby",
+          "automatic": "Automatic",
+          "normal": "Normal heating",
+          "reduced": "Economy heating",
+          "manual": "Manual"
+        }
+      }
+    },
+    "number": {
+      "hc1_base_control": {
+        "name": "Base point temperature heating curve"
+      },
+      "hc1_design_outdoor_control": {
+        "name": "Design outside temperature"
+      },
+      "hc1_design_flow_control": {
+        "name": "Design supply temperature"
+      },
+      "hc1_heating_limit_control": {
+        "name": "Heating limit outdoor temperature"
+      },
+      "hc1_day_control": {
+        "name": "Room temp day heating operation"
+      },
+      "hc1_night_control": {
+        "name": "Room temp night Heating operation"
+      },
+      "hc1_manual_temperature_control": {
+        "name": "Setpoint temperature manual mode"
+      },
+      "hc2_base_control": {
+        "name": "Base point temperature heating curve"
+      },
+      "hc2_design_outdoor_control": {
+        "name": "Design outside temperature"
+      },
+      "hc2_design_flow_control": {
+        "name": "Design supply temperature"
+      },
+      "hc2_heating_limit_control": {
+        "name": "Heating limit outdoor temperature"
+      },
+      "hc2_day_control": {
+        "name": "Room temp day heating operation"
+      },
+      "hc2_night_control": {
+        "name": "Room temp night Heating operation"
+      },
+      "hc2_manual_temperature_control": {
+        "name": "Setpoint temperature manual mode"
+      }
+    },
+    "binary_sensor": {
+      "stale_data": {
+        "name": "Stale data"
       }
     }
   }
