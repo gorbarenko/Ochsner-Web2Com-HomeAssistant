@@ -22,6 +22,7 @@ def _schema(defaults=None):
         vol.Required(CONF_USERNAME, default=defaults.get(CONF_USERNAME, "")): str,
         vol.Required(CONF_PASSWORD, default=defaults.get(CONF_PASSWORD, "")): str,
         vol.Required(CONF_AUTHENTICATION, default=defaults.get(CONF_AUTHENTICATION, "Digest")): vol.In(["Digest", "Basic"]),
+        vol.Optional("auto_discover", default=defaults.get("auto_discover", False)): bool,
     })
 
 
@@ -29,8 +30,8 @@ def _test_connection(data):
     auth = web2com.AUTH.BASIC if data[CONF_AUTHENTICATION] == "Basic" else web2com.AUTH.DIGEST
     client = web2com.Service(data[CONF_HOST], data[CONF_USERNAME], data[CONF_PASSWORD], auth=auth)
     result = client.get_value("/1/2/2/126/1")
-    if result is None or len(result) < 2:
-        raise ValueError("Unexpected SOAP response")
+    if not isinstance(result, (tuple, list)) or len(result) < 2 or result[0] != 200:
+        raise ValueError(f"Web2Com connection verification failed: {result!r}")
 
 
 class Web2ComConfigFlow(config_entries.ConfigFlow, domain=DOMAIN):

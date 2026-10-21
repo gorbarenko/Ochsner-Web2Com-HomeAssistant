@@ -1,51 +1,57 @@
-# Ochsner Web2Com for Home Assistant
+# Ochsner Web2Com — Home Assistant HACS v1.9.0
 
-Custom Home Assistant integration for locally connected Ochsner Web2Com gateways.
+This version is based on the supplied v1.8.0 ZIP. It retains the existing
+`web2com` integration domain, all original sensor entity unique IDs, and the
+heater mode selector.
 
-## Features
+## What changed in 1.9.0
+- Shared sensor DataUpdateCoordinator rather than one coordinator per sensor.
+- Validates HTTP status from `ochsner_web2com.Service.get_value()`; erroneous
+  `(401, 0.0)` and `(0, 0.0)` are **no longer treated as valid zero readings**.
+- Default sensors are polled every 60 seconds. 10 disabled-by-default
+  diagnostic sensor OIDs are round-robin polled on each cycle.
+- Exact duplicate OIDs and duplicate keys are not registered twice.
+- Setup connection validation requires HTTP status 200.
+- Keeps the existing heater mode selector write logic from 1.8.0 unchanged.
+  **Switching that selector writes to the heating system.**
 
-- Local SOAP communication over HTTP with Digest or Basic authentication.
-- Configuration through **Settings → Devices & services → Add integration → Ochsner Web2Com**.
-- Thirteen predefined temperature, heating-circuit and energy sensors.
-- Device entry with grouped entities in Home Assistant.
-- Heater mode selector: **Automatic** (`1`), **Manual** (`4`), or **Off** (`0`). **Warning:** changes can energize electric heaters.
-- Independent polling intervals for each sensor (15–300 seconds).
+## Not yet implemented
+This is a staged v1.9.0 build, **not** the full promised rewrite:
+automatic SOAP tree discovery, automatic bounds/step metadata, bulk SOAP
+requests, and numeric heating-curve controls have **not** been added. The
+included 67 OIDs are taken from the supplied archive, rather than discovered.
 
-## Install with HACS
+## Install
+1. Back up your existing `/config/custom_components/web2com` directory and
+   HA configuration before installing.
+2. Stop or restart HA in a maintenance window. Replace
+   `/config/custom_components/web2com` with this directory.
+3. Restart Home Assistant, check **Settings > Devices & services** and logs.
+4. Connect through config flow using Room Terminal IP, username, password,
+   and Digest (or Basic if your gateway requires it).
+5. Validate temperatures against the physical terminal before enabling any
+   additional diagnostic entities or changing the heater mode.
 
-1. Publish this repository on GitHub with `custom_components/web2com/` in the repository root.
-2. Open HACS → **Custom repositories**, paste the GitHub repository URL, select **Integration** and add it.
-3. Install **Ochsner Web2Com** from HACS, then restart Home Assistant.
-4. Open **Settings → Devices & services → Add integration → Ochsner Web2Com** and enter the gateway address, username, password, and authentication method.
+The additional diagnostic entities may initially show unavailable and become
+available gradually as the coordinator cycles through them. Offline OIDs stay
+unavailable instead of showing fictitious zero readings.
 
-## Notes
+## Safety
+Reading OIDs is non-mutating. The existing select entity still writes the
+electric booster heater mode; never use it without verifying its effects on
+your installation.
 
-- Configuration credentials are supplied in the Home Assistant setup form; this repository contains no device credentials.
-- Communication is local **unencrypted HTTP**. Use a trusted home network.
-- The OID map can vary between gateway/controller models. Check readings against the gateway interface.
-- Heater mode writes use SOAP `writeDpRequest` and must be tested carefully before routine use.
-- This is a community custom integration; it has not been tested with every gateway firmware or Home Assistant release.
+## Експериментальні можливості 1.9.0 (розширена збірка)
 
-## Languages
+- `soap_client.py`: обмежений `listDpRequest` для пошуку OID та `getDpRequest` для групових значень.
+- `sensor.py`: спочатку спроба групового читання лише 2–8 параметрів однієї гілки, а при невідомому форматі SOAP — окремі перевірені читання. Жодні пропущені значення не підставляються нулями.
+- Опція `auto_discover` (за замовчуванням **вимкнена**): один обмежений пошук доступних для читання параметрів у гілках `/1/2/2`, `/1/2/4`, `/1/2/5` під час запуску інтеграції. Нові сенсори вимкнені за замовчуванням і позначені як діагностичні.
+- `number.py`: каркас керування 12 параметрами опалювальних кривих. **Керування не активується**, доки не надано перевірених меж `verified_curve_bounds` і явно не ввімкнено сутності. У стандартному налаштуванні не виконується жодного запису кривих.
 
-English, German, Ukrainian, French, Italian, Dutch, Polish, Czech, Slovak and Slovenian. Russian is not included. Device entity identifiers are generated for each gateway and do not contain user-specific labels.
+### Перевірка
 
-## Heater mode control
+Цей ZIP перевірено на Python-синтаксис та структуру; не протестовано на реальному Room Terminal чи Home Assistant. Перед оновленням збережіть резервну копію папки `web2com`. Після перезапуску перевірте журнал Home Assistant. За проблем із пошуком OID вимкніть `auto_discover` в параметрах інтеграції.
 
-Choose Automatic (1), Manual (4), or Off (0) from the device selector. Value 0 is known as a readback value but its write behavior has not been verified on all gateways: test it with the physical heating controller supervised.
+### Примітка щодо меж кривих
 
-Entity names and selector options are localized in ten languages. After upgrading from the switch version, remove the obsolete switch entity if it remains in the entity registry. The new select is a separate entity.
-
-## Version 1.7.1
-
-Fixed localized entity names: sensor and selector entities now resolve their names from the translation keys. No SOAP commands, OIDs, polling intervals, or unique IDs changed. Existing manually customized entity names are not overwritten by Home Assistant.
-
-## v1.7.2
-
-The heater mode status sensor now reports translated states (Automatic, Manual, Off) instead of SOAP values 1, 4 and 0. Existing history remains numeric; no reconfiguration is required.
-
-## v1.8.0 read-only diagnostic catalog
-
-Added 54 **disabled by default** diagnostic sensors, derived from the Web2Com OID scan and manufacturer VarIdentTexte/AufzaehlTexte dictionaries. Existing 13 sensors and the existing heater mode select keep the same unique IDs and behavior. Each diagnostic entity can be enabled individually in Home Assistant Settings → Devices & services → Entities; an enabled sensor polls every 300 seconds. Enable sparingly to avoid overwhelming the Web2Com gateway.
-
-The additional sensors use the original English label when no verified Ukrainian translation is present. Enum mappings are resolved from the manufacturer XML dictionary. No new write functions or OEM/authentication changes are introduced. Check original sensors with corrected labels (underfloor setpoint and radiator sensors) against their historical entity IDs.
+Межі та кроки кривих не можна безпечно вивести зі звичайних значень OID. Наша інтеграція поки не має підтвердженого автоматичного парсера метаданих допустимих значень саме для цього контролера. У майбутньому розширимо клієнт після перевірки сирих SOAP-відповідей.
