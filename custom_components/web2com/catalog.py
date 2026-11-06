@@ -19,11 +19,11 @@ def device_key(oid):
 
 def device_info(identity, group):
     identifier = f'gateway_{identity}' if group == 'terminal' else f'gateway_{identity}_{group}'
-    info = {'identifiers': {(DOMAIN, identifier)}, 'name': DEVICE_NAMES[group],
+    # The parent link (via_device_id) is set once in async_setup_entry, where the gateway
+    # device registry id is known. Entities only reference devices by identifiers, so they
+    # no longer pass the deprecated ``via_device`` tuple.
+    return {'identifiers': {(DOMAIN, identifier)}, 'name': DEVICE_NAMES[group],
             'manufacturer': 'Ochsner', 'model': 'Room Terminal' if group == 'terminal' else 'Web2Com'}
-    if group != 'terminal':
-        info['via_device'] = (DOMAIN, f'gateway_{identity}')
-    return info
 
 
 def load_catalog():
