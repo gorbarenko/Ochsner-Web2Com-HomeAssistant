@@ -9,7 +9,7 @@ DEVICE_NAMES = {'hc1': 'Контур 1 — тепла підлога', 'hc2': '�
 TEMPERATURE_CODES = {'03:01': 'base', '03:12': 'design_outdoor', '03:13': 'design_flow',
                      '03:21': 'heating_limit', '03:51': 'day', '03:53': 'night',
                      '07:09': 'manual_temperature'}
-MODE_OPTIONS = {'automatic': 1, 'manual': 4}  # Off is read-only until verified on the hardware.
+MODE_OPTIONS = {'off': 0, 'automatic': 1, 'manual': 4}  # off added 2026-10-31; still filtered by the controller's live enum permissions
 CIRCUIT_MODES = {'standby': 0, 'automatic': 1, 'normal': 4, 'reduced': 5, 'manual': 7}
 
 
