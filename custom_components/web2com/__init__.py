@@ -1,4 +1,4 @@
-"""Ochsner Web2Com v1.9.2."""
+"""Ochsner Web2Com v1.9.3."""
 from homeassistant.const import Platform
 from homeassistant.helpers.storage import Store
 from homeassistant.helpers import device_registry as dr, entity_registry as er
@@ -50,8 +50,12 @@ async def async_setup_entry(hass, entry):
     devices = dr.async_get(hass)
     device_ids = {}
     for group in ('terminal', 'hc1', 'hc2', 'heaters'):
+        extra = {}
+        if group != 'terminal':
+            # Child circuits hang under the gateway ("terminal") device, created first.
+            extra['via_device_id'] = device_ids['terminal']
         device_ids[group] = devices.async_get_or_create(config_entry_id=entry.entry_id,
-            **device_info(identity, group)).id
+            **device_info(identity, group), **extra).id
     for definition in definitions:
         for key, _ in definition['aliases']:
             entity_id = registry.async_get_entity_id('sensor', DOMAIN, prefix + key)
